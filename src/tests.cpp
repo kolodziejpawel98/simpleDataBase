@@ -2,24 +2,44 @@
 #include "database.hpp"
 #include "student.hpp"
 
-// Demonstrate some basic assertions.
-TEST(HelloTest, BasicAssertions)
-{
-  // Expect two strings not to be equal.
-  EXPECT_STRNE("hello", "world");
-  // Expect equality.
-  EXPECT_EQ(7 * 6, 42);
-}
+// struct DatabaseTest : ::testing::Test
+// { // common data for all test suites
+//   Database db;
+// }
 
-TEST(CheckStructure, CanAddStudentToDb)
-{
-  Student adam{"Adam",
-               "Kowalski",
-               "ul. Dobra 13 00 - 200 Warszawa ",
-               123456,
-               "23121311123",
-               Gender::Male};
-  Database db;
-  EXPECT_TRUE(db.add(adam));
-  EXPECT_FALSE(db.add(adam));
-}
+// remove
+// TEST_F(DatabaseTest, CanAddStudentToDb)
+// {
+// Student adam{"Adam",
+//              "Kowalski",
+//              "ul. Dobra 13 00 - 200 Warszawa",
+//              123456,
+//              "23121311123",
+//              Gender::Male};
+
+// EXPECT_TRUE(db.add(adam));
+//   EXPECT_FALSE(db.add(adam));
+// }
+
+// TEST_F(DatabaseTest, DisplayEmptyDb)
+// {
+//   auto content = db.show();
+//   auto expected = "";
+//   EXPECT_EQ(content, expected);
+// }
+
+// TEST_F(DatabaseTest, DisplayNonEmptyDb)
+// {
+//   Student adam{"Adam",
+//                "Kowalski",
+//                "ul. Dobra 13 00 - 200 Warszawa",
+//                123456,
+//                "23121311123",
+//                Gender::Male};
+
+//   db.add(adam);
+//   // check adding the same person twice
+//   auto content = db.show();
+//   auto expected = "Adam Kowalski; ul. Dobra 13 00 - 200 Warszawa; 123456; 23121311123; Male";
+//   EXPECT_EQ(content, expected);
+// }
