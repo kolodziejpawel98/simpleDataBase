@@ -16,4 +16,14 @@ public:
             int studentIndex,
             std::string pesel,
             Gender gender);
+
+private:
+    std::string name;
+    std::string surname;
+    std::string adress;
+    int studentIndex;
+    std::string pesel;
+    Gender gender;
+
+    friend class Database;
 };

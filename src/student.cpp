@@ -5,6 +5,9 @@ Student::Student(std::string name,
                  std::string adress,
                  int studentIndex,
                  std::string pesel,
-                 Gender gender)
-{
-}
+                 Gender gender) : name(name),
+                                  surname(surname),
+                                  adress(adress),
+                                  studentIndex(studentIndex),
+                                  pesel(pesel),
+                                  gender(gender) {}

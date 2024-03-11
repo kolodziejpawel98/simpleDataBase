@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 3.14)
 project(simpleDataBase)
 
 # GoogleTest requires at least C++14
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(SOURCES src/database.cpp src/student.cpp)
-set(FLAGS -Wall -Wextra -Wpedantic -std=c++14)
+set(FLAGS -Wall -Wextra -Wpedantic -std=c++17)
 
 
 include(FetchContent)
