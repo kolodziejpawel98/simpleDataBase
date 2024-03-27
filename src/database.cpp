@@ -11,7 +11,6 @@ bool Database::add(const Student &student)
     else
     {
         students.push_back(student);
-        std::cout << "[ADD] Total number of students = " << students.size() << std::endl;
         return true;
     }
 }
@@ -27,7 +26,6 @@ bool Database::remove(const Student &student)
     else
     {
         students.erase(studentIndex);
-        std::cout << "[REMOVE] Total number of students = " << students.size() << std::endl;
         return true;
     }
 }
@@ -50,4 +48,15 @@ void Database::printStudent(int index)
 {
     std::cout << "#    name: " << students.at(index).name << "\n"
               << "# surname: " << students.at(index).surname << std::endl;
+}
+
+void Database::print()
+{
+
+    std::cout << "=============================\n";
+    for (const auto &student : students)
+    {
+        std::cout << "# " << student.name << ", " << student.surname << " #" << std::endl;
+    }
+    std::cout << "=============================\n";
 }

@@ -11,6 +11,7 @@ public:
     bool add(const Student &student);
     bool remove(const Student &student);
     std::string show();
+    void print();
     void printStudent(int index);
 
 private:
