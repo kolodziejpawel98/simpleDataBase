@@ -17,6 +17,8 @@ public:
             std::string pesel,
             Gender gender);
 
+    std::string show();
+
 private:
     std::string name;
     std::string surname;

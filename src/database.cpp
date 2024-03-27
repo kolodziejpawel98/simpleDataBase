@@ -2,15 +2,32 @@
 
 bool Database::add(const Student &student)
 {
-    auto isStudentInDb = std::find_if(students.begin(), students.end(), [student](const Student &s)
-                                      { return student.pesel == s.pesel; });
-    if (isStudentInDb != students.end())
+    auto studentIndex = std::find_if(students.begin(), students.end(), [student](const Student &s)
+                                     { return student.pesel == s.pesel; });
+    if (studentIndex != students.end())
     {
         return false;
     }
     else
     {
         students.push_back(student);
+        std::cout << "[ADD] Total number of students = " << students.size() << std::endl;
+        return true;
+    }
+}
+
+bool Database::remove(const Student &student)
+{
+    auto studentIndex = std::find_if(students.begin(), students.end(), [student](const Student &s)
+                                     { return student.pesel == s.pesel; });
+    if (studentIndex == students.end())
+    {
+        return false;
+    }
+    else
+    {
+        students.erase(studentIndex);
+        std::cout << "[REMOVE] Total number of students = " << students.size() << std::endl;
         return true;
     }
 }
@@ -27,4 +44,10 @@ std::string Database::show()
     {
         return "";
     }
+}
+
+void Database::printStudent(int index)
+{
+    std::cout << "#    name: " << students.at(index).name << "\n"
+              << "# surname: " << students.at(index).surname << std::endl;
 }

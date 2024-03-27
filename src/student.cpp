@@ -11,3 +11,8 @@ Student::Student(std::string name,
                                   studentIndex(studentIndex),
                                   pesel(pesel),
                                   gender(gender) {}
+
+std::string Student::show()
+{
+    return name + " " + surname + "; " + adress + "; " + std::to_string(studentIndex) + "; " + pesel;
+}
